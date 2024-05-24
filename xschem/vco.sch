@@ -5,6 +5,7 @@ K {}
 V {}
 S {}
 E {}
+T {tcleval(lvs_ignore=$lvs_ignore)} 300 -140 0 0 0.6 0.6 {name=l1}
 N 810 -300 840 -300 {
 lab=#net1}
 N 840 -440 840 -300 {
@@ -56,8 +57,8 @@ lab=vss}
 N 910 -300 910 -270 {lab=out}
 N 910 -300 950 -300 {lab=out}
 N 870 -300 870 -240 {lab=#net1}
-N 910 -240 990 -240 { lab=#net4}
-N 910 -210 990 -210 { lab=#net4}
+N 910 -240 990 -240 { lab=vss}
+N 910 -210 990 -210 { lab=vss}
 N 910 -360 990 -360 { lab=vdd}
 N 870 -360 870 -300 { lab=#net1}
 N 910 -330 910 -300 {lab=out}
@@ -66,13 +67,13 @@ lab=vdd}
 N 990 -390 990 -360 {
 lab=vdd}
 N 990 -240 990 -210 {
-lab=#net4}
+lab=vss}
 C {delay_stage.sym} 340 -300 0 0 {name=x1}
 C {delay_stage.sym} 530 -300 0 0 {name=x2}
 C {delay_stage.sym} 720 -300 0 0 {name=x3}
-C {devices/parax_cap.sym} 430 -210 0 0 {name=C1 gnd=0 value=10f m=1}
-C {devices/parax_cap.sym} 620 -210 0 0 {name=C2 gnd=0 value=10f m=1}
-C {devices/parax_cap.sym} 810 -210 0 0 {name=C3 gnd=0 value=10f m=1}
+C {devices/parax_cap.sym} 430 -210 0 0 {name=C1 gnd=0 value=10f m=1 lvs_ignore=open}
+C {devices/parax_cap.sym} 620 -210 0 0 {name=C2 gnd=0 value=10f m=1 lvs_ignore=open}
+C {devices/parax_cap.sym} 810 -210 0 0 {name=C3 gnd=0 value=10f m=1 lvs_ignore=open}
 C {devices/opin.sym} 950 -300 0 0 {name=p15 lab=out}
 C {sky130_fd_pr/pfet_01v8.sym} 80 -420 0 0 {name=M5
 L=0.15
@@ -150,3 +151,17 @@ spiceprefix=X
 }
 C {devices/lab_wire.sym} 910 -390 0 0 {name=p34 lab=vdd}
 C {devices/lab_wire.sym} 910 -210 2 1 {name=p35 lab=vss}
+C {devices/launcher.sym} 70 -40 0 0 {name=h1
+descr="Toggle lvs_ignore variable and
+rebuild connectivity"
+tclcommand="
+if \{![info exists lvs_ignore]\} \{
+   set lvs_ignore 1
+\} else \{
+  set lvs_ignore [expr \{!$lvs_ignore\}]
+\}
+xschem rebuild_connectivity
+xschem unhilight_all
+"}
+C {devices/lab_wire.sym} 430 -300 3 1 {name=p36 lab=stage_0_out}
+C {devices/lab_wire.sym} 620 -300 3 1 {name=p37 lab=stage_1_out}

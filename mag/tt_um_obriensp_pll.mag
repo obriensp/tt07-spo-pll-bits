@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1716529149
+timestamp 1716573205
 << metal1 >>
 rect 16182 15182 16192 15382
 rect 16392 15182 16402 15382
@@ -225,6 +225,10 @@ use delay_stage  delay_stage_2
 timestamp 1716529149
 transform 1 0 14708 0 1 13624
 box 208 -1906 3270 -80
+use vco  vco_0 ~/Development/spo/vlsi/tt07-spo-pll/mag
+timestamp 1716573205
+transform 1 0 16116 0 1 11620
+box 3880 -2880 6942 4780
 << labels >>
 flabel metal4 s 30974 44952 31034 45152 0 FreeSans 480 90 0 0 clk
 port 0 nsew signal input
