@@ -53,6 +53,20 @@ N 840 -300 870 -300 {
 lab=#net1}
 N -120 -440 -100 -440 {
 lab=vss}
+N 910 -300 910 -270 {lab=out}
+N 910 -300 950 -300 {lab=out}
+N 870 -300 870 -240 {lab=#net1}
+N 910 -240 990 -240 { lab=#net4}
+N 910 -210 990 -210 { lab=#net4}
+N 910 -360 990 -360 { lab=vdd}
+N 870 -360 870 -300 { lab=#net1}
+N 910 -330 910 -300 {lab=out}
+N 910 -390 990 -390 {
+lab=vdd}
+N 990 -390 990 -360 {
+lab=vdd}
+N 990 -240 990 -210 {
+lab=#net4}
 C {delay_stage.sym} 340 -300 0 0 {name=x1}
 C {delay_stage.sym} 530 -300 0 0 {name=x2}
 C {delay_stage.sym} 720 -300 0 0 {name=x3}
@@ -60,9 +74,6 @@ C {devices/parax_cap.sym} 430 -210 0 0 {name=C1 gnd=0 value=10f m=1}
 C {devices/parax_cap.sym} 620 -210 0 0 {name=C2 gnd=0 value=10f m=1}
 C {devices/parax_cap.sym} 810 -210 0 0 {name=C3 gnd=0 value=10f m=1}
 C {devices/opin.sym} 950 -300 0 0 {name=p15 lab=out}
-C {not.sym} 910 -300 0 0 {name=x4 m=1 
-+ W_N=1 L_N=0.15 W_P=2 L_P=0.15 
-+ VCCPIN=vdd VSSPIN=vss}
 C {sky130_fd_pr/pfet_01v8.sym} 80 -420 0 0 {name=M5
 L=0.15
 W=2
@@ -123,3 +134,19 @@ C {devices/lab_wire.sym} 100 -170 2 1 {name=p30 lab=vss}
 C {devices/lab_wire.sym} 350 -370 3 1 {name=p31 lab=vss}
 C {devices/lab_wire.sym} 540 -370 3 1 {name=p32 lab=vss}
 C {devices/lab_wire.sym} 730 -370 3 1 {name=p33 lab=vss}
+C {sky130_fd_pr/nfet_01v8.sym} 890 -240 0 0 {name=M1
+L=0.15
+W=1
+nf=1 mult=1
+model=nfet_01v8
+spiceprefix=X
+}
+C {sky130_fd_pr/pfet_01v8.sym} 890 -360 0 0 {name=M2
+L=0.15
+W=2
+nf=1 mult=1
+model=pfet_01v8
+spiceprefix=X
+}
+C {devices/lab_wire.sym} 910 -390 0 0 {name=p34 lab=vdd}
+C {devices/lab_wire.sym} 910 -210 2 1 {name=p35 lab=vss}
