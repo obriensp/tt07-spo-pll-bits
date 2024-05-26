@@ -18,7 +18,7 @@ Vmeas vdd net_measured_vdd 0
 .save i(vmeas)
 
 .include vco_prefix.spice
-.include ../mag/vco.sim.spice
+.include ../../../mag/vco.sim.spice
 
 *.option savecurrents
 .control
