@@ -13,8 +13,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=4.5622688e-08
-x2=5.7953144e-08
+x1=1.01334e-07
+x2=1.0218923e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -38,8 +38,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=4.5622688e-08
-x2=5.7953144e-08
+x1=1.01334e-07
+x2=1.0218923e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -76,17 +76,17 @@ lab=vss}
 N 260 -140 260 -120 {
 lab=vcont_b}
 N 440 -10 830 -10 {
-lab=vss}
+lab=vdd}
 N 830 -90 830 -10 {
-lab=vss}
+lab=vdd}
 N 810 -90 810 -30 {
-lab=vss}
+lab=vdd}
 N 440 -30 810 -30 {
-lab=vss}
+lab=vdd}
 N 540 -90 540 -10 {
-lab=vss}
+lab=vdd}
 N 520 -90 520 -30 {
-lab=vss}
+lab=vdd}
 C {devices/vsource.sym} -220 -100 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -220 -70 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -220 -130 0 0 {name=p1 lab=vdd}
@@ -178,5 +178,5 @@ C {devices/lab_wire.sym} 870 -90 3 0 {name=p20 lab=vcont}
 C {devices/lab_wire.sym} 890 -90 3 0 {name=p21 lab=vcont_b}
 C {devices/lab_wire.sym} 750 -160 0 0 {name=p22 lab=vpulse}
 C {devices/lab_wire.sym} 940 -160 0 1 {name=p23 lab=out_parax}
-C {devices/lab_wire.sym} 440 -10 0 0 {name=p24 lab=vss}
-C {devices/lab_wire.sym} 440 -30 0 0 {name=p25 lab=vss}
+C {devices/lab_wire.sym} 440 -10 0 0 {name=p24 lab=vdd}
+C {devices/lab_wire.sym} 440 -30 0 0 {name=p25 lab=vdd}

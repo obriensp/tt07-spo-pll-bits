@@ -13,8 +13,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=2.8312505e-07
-x2=2.9033075e-07
+x1=3.1557004e-07
+x2=3.2018169e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -39,7 +39,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=2.0e+09
+x2=2.5e+09
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -65,8 +65,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=2.8312505e-07
-x2=2.9033075e-07
+x1=3.1557004e-07
+x2=3.2018169e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -91,7 +91,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=2.0e+09
+x2=2.5e9
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -109,18 +109,68 @@ logy=0
 digital=0
 sim_type=spectrum
 rawfile=$netlist_dir/vco_testbench_fft.raw}
+B 2 1700 -740 2500 -340 {flags=graph
+y1=0.00
+y2=0.0005
+ypos1=0.12609929
+ypos2=1.2636995
+divy=5
+subdivy=1
+unity=1
+x1=3.1557004e-07
+x2=3.2018169e-07
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="\\"i(vmeas) avg()%0\\"
+\\"i(vmeas) avg()%1\\"
+\\"i(vmeas) avg()%2\\"
+\\"i(vmeas) avg()%3\\"
+\\"i(vmeas) avg()%4\\""
+color="4 8 21 20 18"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=0}
+B 2 1700 -1160 2500 -760 {flags=graph
+y1=0.000
+y2=0.0005
+ypos1=0.12609929
+ypos2=1.2636995
+divy=5
+subdivy=1
+unity=1
+x1=3.1557004e-07
+x2=3.2018169e-07
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="\\"i(vmeas_parax) avg()%0\\"
+\\"i(vmeas_parax) avg()%1\\"
+\\"i(vmeas_parax) avg()%2\\"
+\\"i(vmeas_parax) avg()%3\\"
+\\"i(vmeas_parax) avg()%4\\""
+color="4 8 21 20 18"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=0}
 N 120 90 510 90 {
 lab=vdd}
 N 510 -30 510 90 {
 lab=vdd}
 N 490 -30 490 70 {
-lab=vss}
+lab=vdd}
 N 120 70 490 70 {
-lab=vss}
+lab=vdd}
 N 250 -30 250 90 {
 lab=vdd}
 N 230 -30 230 70 {
-lab=vss}
+lab=vdd}
 C {devices/vsource.sym} -160 -80 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -160 -50 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -160 -110 0 0 {name=p1 lab=vdd}
@@ -133,13 +183,14 @@ simulator=ngspice
 only_toplevel=false 
 value="
 .param Vc=0.0
-
+.option savecurrents
 .control
   save all
 
   foreach v 1.0 1.2 1.4 1.6 1.8
     alterparam Vc=$v
     reset
+    save all
     tran 10p 500n 100n
     write vco_testbench.raw
 
@@ -153,7 +204,7 @@ value="
   quit 0
 .endc
 "}
-C {devices/launcher.sym} 220 -200 0 0 {name=h17 
+C {devices/launcher.sym} 100 -290 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
@@ -161,7 +212,7 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 "
 }
 C {devices/lab_wire.sym} 210 -30 3 0 {name=p2 lab=vcont}
-C {devices/lab_wire.sym} 220 -130 3 1 {name=p3 lab=vdd}
+C {devices/lab_wire.sym} 220 -190 3 1 {name=p3 lab=vdd}
 C {devices/lab_wire.sym} 310 -80 0 1 {name=p5 lab=out}
 C {vco.sym} 230 -80 0 0 {name=x2}
 C {devices/vsource.sym} -100 -80 0 0 {name=V3 value=0 savecurrent=false}
@@ -169,7 +220,7 @@ C {devices/gnd.sym} -100 -50 0 0 {name=l2 lab=GND}
 C {devices/lab_wire.sym} -100 -110 0 0 {name=p8 lab=vss}
 C {devices/lab_wire.sym} 240 -130 3 1 {name=p9 lab=vss}
 C {devices/lab_wire.sym} 470 -30 3 0 {name=p10 lab=vcont}
-C {devices/lab_wire.sym} 480 -130 3 1 {name=p11 lab=vdd}
+C {devices/lab_wire.sym} 480 -190 3 1 {name=p11 lab=vdd}
 C {devices/lab_wire.sym} 570 -80 0 1 {name=p12 lab=out_parax}
 C {vco.sym} 490 -80 0 0 {name=x1
 schematic=vco_parax.sim
@@ -178,4 +229,6 @@ tclcommand="textwindow [file normalize ../mag/vco.sim.spice]"
 }
 C {devices/lab_wire.sym} 500 -130 3 1 {name=p15 lab=vss}
 C {devices/lab_wire.sym} 120 90 0 0 {name=p16 lab=vdd}
-C {devices/lab_wire.sym} 120 70 0 0 {name=p17 lab=vss}
+C {devices/lab_wire.sym} 120 70 0 0 {name=p17 lab=vdd}
+C {devices/ammeter.sym} 220 -160 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
+C {devices/ammeter.sym} 480 -160 0 0 {name=Vmeas_parax savecurrent=true spice_ignore=0}
