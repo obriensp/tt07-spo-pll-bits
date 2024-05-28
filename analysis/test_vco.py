@@ -2,7 +2,7 @@
 
 import argparse
 import asyncio
-from itertools import islice
+import itertools
 import os
 import shutil
 import subprocess
@@ -89,7 +89,7 @@ def batched(iterable, n):
     # batched('ABCDEFG', 3) --> ABC DEF G
     it = iter(iterable)
     while True:
-        batch = tuple(islice(it, n))
+        batch = tuple(itertools.islice(it, n))
         if not batch:
             return
         yield batch
@@ -137,14 +137,7 @@ async def main():
     print(f'Iterations: {iterations}')
     print(f'')
 
-    configs = []
-    for corner in corners:
-        for vdd in supply_voltages:
-            for t in temperatures:
-                for vcon in control_voltages:
-                    for s0 in s0_values:
-                        for s1 in s1_values:
-                            configs.extend([(corner, vdd, t, vcon, s0, s1)] * iterations)
+    configs = list(itertools.product(corners, supply_voltages, temperatures, control_voltages, s0_values, s1_values)) * iterations
 
     job_count = len(configs)
     worker_count = args.jobs or os.cpu_count()
