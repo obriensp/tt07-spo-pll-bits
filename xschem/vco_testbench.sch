@@ -5,7 +5,7 @@ K {}
 V {}
 S {}
 E {}
-B 2 40 -740 840 -340 {flags=graph
+B 2 20 -490 820 -90 {flags=graph
 y1=0
 y2=2
 ypos1=0.12609929
@@ -13,8 +13,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=2.8010211e-07
-x2=3.0758991e-07
+x1=100n
+x2=500n
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -30,7 +30,7 @@ unitx=1
 logx=0
 logy=0
 digital=1}
-B 2 870 -740 1670 -340 {flags=graph,unlocked
+B 2 850 -490 1650 -90 {flags=graph,unlocked
 y1=1.1e-08
 y2=1.2
 ypos1=0.12609929
@@ -39,7 +39,7 @@ divy=5
 subdivy=1
 unity=1
 x1=0
-x2=2.5e+09
+x2=5e+08
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -57,59 +57,7 @@ logy=0
 digital=0
 sim_type=spectrum
 rawfile=$netlist_dir/vco_testbench_fft.raw}
-B 2 40 -1160 840 -760 {flags=graph
-y1=0
-y2=2
-ypos1=0.12609929
-ypos2=1.2636995
-divy=5
-subdivy=1
-unity=1
-x1=2.8010211e-07
-x2=3.0758991e-07
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node="out_parax%0
-out_parax%1
-out_parax%2
-out_parax%3
-out_parax%4"
-color="4 8 21 20 18"
-dataset=-1
-unitx=1
-logx=0
-logy=0
-digital=1}
-B 2 870 -1160 1670 -760 {flags=graph,unlocked
-y1=1.1e-08
-y2=1.2
-ypos1=0.12609929
-ypos2=1.2636995
-divy=5
-subdivy=1
-unity=1
-x1=0
-x2=2.5e9
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node="out_parax%0
-out_parax%1
-out_parax%2
-out_parax%3
-out_parax%4"
-color="4 8 21 20 18"
-dataset=-1
-unitx=1
-logx=0
-logy=0
-digital=0
-sim_type=spectrum
-rawfile=$netlist_dir/vco_testbench_fft.raw}
-B 2 1700 -740 2500 -340 {flags=graph
+B 2 20 -920 820 -520 {flags=graph
 y1=0.00
 y2=0.0005
 ypos1=0.12609929
@@ -117,8 +65,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=2.8010211e-07
-x2=3.0758991e-07
+x1=2.3440383e-07
+x2=2.5289939e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -134,42 +82,13 @@ unitx=1
 logx=0
 logy=0
 digital=0}
-B 2 1700 -1160 2500 -760 {flags=graph
-y1=0.000
-y2=0.0005
-ypos1=0.12609929
-ypos2=1.2636995
-divy=5
-subdivy=1
-unity=1
-x1=2.8010211e-07
-x2=3.0758991e-07
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node="\\"i(vmeas_parax) avg()%0\\"
-\\"i(vmeas_parax) avg()%1\\"
-\\"i(vmeas_parax) avg()%2\\"
-\\"i(vmeas_parax) avg()%3\\"
-\\"i(vmeas_parax) avg()%4\\""
-color="4 8 21 20 18"
-dataset=-1
-unitx=1
-logx=0
-logy=0
-digital=0}
-N 120 90 510 90 {
+N 190 200 190 320 {
+lab=vss}
+N 170 200 170 300 {
 lab=vdd}
-N 510 -30 510 90 {
-lab=vdd}
-N 490 -30 490 70 {
-lab=vdd}
-N 120 70 490 70 {
-lab=vdd}
-N 250 -30 250 90 {
-lab=vdd}
-N 230 -30 230 70 {
+N 60 320 190 320 {
+lab=vss}
+N 60 300 170 300 {
 lab=vdd}
 C {devices/vsource.sym} -160 -80 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -160 -50 0 0 {name=l1 lab=GND}
@@ -178,10 +97,13 @@ C {devices/vsource.sym} -50 -80 0 0 {name=V2 value=\{Vc\} savecurrent=false}
 C {devices/gnd.sym} -50 -50 0 0 {name=l4 lab=GND}
 C {devices/lab_wire.sym} -50 -110 0 0 {name=p4 lab=vcont}
 C {sky130_fd_pr/corner.sym} -310 -115 0 0 {name=CORNER only_toplevel=true corner=tt}
-C {devices/simulator_commands_shown.sym} -315 -590 0 0 {name=COMMANDS
+C {devices/simulator_commands_shown.sym} -55 70 0 1 {name=COMMANDS
 simulator=ngspice
 only_toplevel=false 
 value="
+.include sky130_fd_sc_hd__mux2_1.spice
+.include sky130_fd_sc_hd__mux4_1.spice
+
 .param Vc=0.0
 .param mc_mm_switch=1
 .param mc_pr_switch=1
@@ -194,10 +116,11 @@ value="
     reset
     save all
     tran 10p 500n 100n
+    remzerovec
     write vco_testbench.raw
 
     linearize
-    fft v(out) v(out_parax)
+    fft v(out)
 
     write vco_testbench_fft.raw
     set appendwrite
@@ -206,31 +129,21 @@ value="
   quit 0
 .endc
 "}
-C {devices/launcher.sym} 100 -290 0 0 {name=h17 
+C {devices/launcher.sym} 80 -50 0 0 {name=h17 
 descr="Load waves" 
 tclcommand="
 xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]]].raw tran
 
 "
 }
-C {devices/lab_wire.sym} 210 -30 3 0 {name=p2 lab=vcont}
-C {devices/lab_wire.sym} 220 -190 3 1 {name=p3 lab=vdd}
-C {devices/lab_wire.sym} 310 -80 0 1 {name=p5 lab=out}
-C {vco.sym} 230 -80 0 0 {name=x2}
+C {devices/lab_wire.sym} 150 200 3 0 {name=p2 lab=vcont}
+C {devices/lab_wire.sym} 160 40 3 1 {name=p3 lab=vdd}
+C {devices/lab_wire.sym} 250 150 0 1 {name=p5 lab=out}
+C {vco.sym} 170 150 0 0 {name=x2}
 C {devices/vsource.sym} -100 -80 0 0 {name=V3 value=0 savecurrent=false}
 C {devices/gnd.sym} -100 -50 0 0 {name=l2 lab=GND}
 C {devices/lab_wire.sym} -100 -110 0 0 {name=p8 lab=vss}
-C {devices/lab_wire.sym} 240 -130 3 1 {name=p9 lab=vss}
-C {devices/lab_wire.sym} 470 -30 3 0 {name=p10 lab=vcont}
-C {devices/lab_wire.sym} 480 -190 3 1 {name=p11 lab=vdd}
-C {devices/lab_wire.sym} 570 -80 0 1 {name=p12 lab=out_parax}
-C {vco.sym} 490 -80 0 0 {name=x1
-schematic=vco_parax.sim
-spice_sym_def="tcleval(.include [file normalize ../mag/vco.sim.spice])"
-tclcommand="textwindow [file normalize ../mag/vco.sim.spice]"
-}
-C {devices/lab_wire.sym} 500 -130 3 1 {name=p15 lab=vss}
-C {devices/lab_wire.sym} 120 90 0 0 {name=p16 lab=vdd}
-C {devices/lab_wire.sym} 120 70 0 0 {name=p17 lab=vdd}
-C {devices/ammeter.sym} 220 -160 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
-C {devices/ammeter.sym} 480 -160 0 0 {name=Vmeas_parax savecurrent=true spice_ignore=0}
+C {devices/lab_wire.sym} 180 100 3 1 {name=p9 lab=vss}
+C {devices/lab_wire.sym} 60 320 0 0 {name=p16 lab=vss}
+C {devices/lab_wire.sym} 60 300 0 0 {name=p17 lab=vdd}
+C {devices/ammeter.sym} 160 70 0 0 {name=Vmeas savecurrent=true spice_ignore=0}

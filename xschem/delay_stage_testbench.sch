@@ -75,17 +75,13 @@ N 260 -60 340 -60 {
 lab=vss}
 N 260 -140 260 -120 {
 lab=vcont_b}
-N 440 -10 830 -10 {
-lab=vdd}
-N 830 -90 830 -10 {
-lab=vdd}
-N 810 -90 810 -30 {
-lab=vdd}
-N 440 -30 810 -30 {
-lab=vdd}
 N 540 -90 540 -10 {
 lab=vdd}
 N 520 -90 520 -30 {
+lab=vdd}
+N 440 -30 520 -30 {
+lab=vdd}
+N 440 -10 540 -10 {
 lab=vdd}
 C {devices/vsource.sym} -220 -100 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -220 -70 0 0 {name=l1 lab=GND}
@@ -167,16 +163,5 @@ C {devices/gnd.sym} -40 -70 0 0 {name=l3 lab=GND}
 C {devices/lab_wire.sym} -40 -130 0 0 {name=p19 lab=vpulse}
 C {devices/lab_wire.sym} 460 -160 0 0 {name=p2 lab=vpulse}
 C {devices/lab_wire.sym} 650 -160 0 1 {name=p3 lab=out}
-C {delay_stage.sym} 850 -160 0 0 {name=x2
-schematic=delay_stage_parax.sim
-spice_sym_def="tcleval(.include [file normalize ../mag/delay_stage.sim.spice])"
-tclcommand="textwindow [file normalize ../mag/delay_stage.sim.spice]"
-}
-C {devices/lab_wire.sym} 840 -230 3 1 {name=p5 lab=vdd}
-C {devices/lab_wire.sym} 860 -230 3 1 {name=p6 lab=vss}
-C {devices/lab_wire.sym} 870 -90 3 0 {name=p20 lab=vcont}
-C {devices/lab_wire.sym} 890 -90 3 0 {name=p21 lab=vcont_b}
-C {devices/lab_wire.sym} 750 -160 0 0 {name=p22 lab=vpulse}
-C {devices/lab_wire.sym} 940 -160 0 1 {name=p23 lab=out_parax}
 C {devices/lab_wire.sym} 440 -10 0 0 {name=p24 lab=vdd}
 C {devices/lab_wire.sym} 440 -30 0 0 {name=p25 lab=vdd}
