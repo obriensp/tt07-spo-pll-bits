@@ -47,7 +47,7 @@ C {delay_stage.sym} 360 -210 0 0 {name=x1}
 C {delay_stage.sym} 550 -210 0 0 {name=x2}
 C {delay_stage.sym} 740 -210 0 0 {name=x3}
 C {sky130_fd_pr/pfet_01v8.sym} 80 -280 0 0 {name=M5
-L=0.15
+L=0.3
 W=2
 nf=1
 mult=1
@@ -61,20 +61,6 @@ model=pfet_01v8
 spiceprefix=X
 }
 C {devices/lab_wire.sym} 100 -330 0 0 {name=p3 lab=vdd}
-C {sky130_fd_pr/nfet_01v8.sym} 80 -190 0 0 {name=M6
-L=0.15
-W=1
-nf=1 
-mult=1
-ad="'int((nf+1)/2) * W/nf * 0.29'" 
-pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
-as="'int((nf+2)/2) * W/nf * 0.29'" 
-ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
-nrd="'0.29 / W'" nrs="'0.29 / W'"
-sa=0 sb=0 sd=0
-model=nfet_01v8
-spiceprefix=X
-}
 C {devices/lab_wire.sym} 60 -190 0 0 {name=p5 lab=vcont}
 C {devices/lab_wire.sym} 60 -280 0 0 {name=p7 lab=vcont_b}
 C {devices/lab_wire.sym} 380 -140 3 0 {name=p1 lab=vcont}
@@ -97,3 +83,17 @@ C {devices/lab_wire.sym} 370 -280 3 1 {name=p31 lab=vss}
 C {devices/lab_wire.sym} 560 -280 3 1 {name=p32 lab=vss}
 C {devices/lab_wire.sym} 750 -280 3 1 {name=p33 lab=vss}
 C {devices/opin.sym} 890 -210 0 0 {name=p12 lab=out}
+C {sky130_fd_pr/nfet_01v8_lvt.sym} 80 -190 0 0 {name=M1
+L=0.3
+W=2
+nf=1
+mult=1
+ad="'int((nf+1)/2) * W/nf * 0.29'" 
+pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
+as="'int((nf+2)/2) * W/nf * 0.29'" 
+ps="'2*int((nf+2)/2) * (W/nf + 0.29)'"
+nrd="'0.29 / W'" nrs="'0.29 / W'"
+sa=0 sb=0 sd=0
+model=nfet_01v8_lvt
+spiceprefix=X
+}

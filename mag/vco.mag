@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1717029282
+timestamp 1717079806
 << error_s >>
 rect 5160 3780 5546 3860
 rect 4930 1776 4988 1782
@@ -308,7 +308,7 @@ timestamp 1717029282
 transform 1 0 3672 0 1 3816
 box 1110 -2670 1620 -210
 use sky130_fd_pr__pfet_01v8_LGAKDL  XM2
-timestamp 1716517215
+timestamp 1717042859
 transform 1 0 5371 0 1 4164
 box -211 -384 211 384
 use sky130_fd_pr__pfet_01v8_XGAKDL  XM5
