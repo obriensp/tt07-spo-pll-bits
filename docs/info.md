@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+The VCO is a current-starved ring oscillator with a variable number of stages. The digital inputs `s0` and `s1` determine the number of stages. The analog `vcont` input controls the frequency by adjusting the amount of current received by the inverters.
 
 ## How to test
 
-Explain how to use your project
+Apply a voltage between 1.0V and 1.8V to `vcont` and observe the oscillator output on `uo0`.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+An osilloscope, function generator, and a benchtop power supply would be handy but are not required.
