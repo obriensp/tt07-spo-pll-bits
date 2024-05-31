@@ -19,10 +19,12 @@ module tt_um_obriensp_pll (
     input  wire       rst_n     // reset_n - low to reset
 );
 
-ring_osc3 osc(
+vco u_vco(
     .vdd(VPWR),
     .vss(VGND),
     .vcont(ua[0]),
+    .s0(ui_in[0]),
+    .s1(ui_in[1]),
     .out(uo_out[0])
 );
 
