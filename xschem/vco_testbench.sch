@@ -13,8 +13,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=100n
-x2=500n
+x1=2.7139334e-07
+x2=2.837238e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -57,7 +57,7 @@ logy=0
 digital=0
 sim_type=spectrum
 rawfile=$netlist_dir/vco_testbench_fft.raw}
-B 2 20 -920 820 -520 {flags=graph
+B 2 1680 -490 2480 -90 {flags=graph
 y1=0.00
 y2=0.0005
 ypos1=0.12609929
@@ -65,8 +65,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=2.3440383e-07
-x2=2.5289939e-07
+x1=2.7139334e-07
+x2=2.837238e-07
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -82,13 +82,102 @@ unitx=1
 logx=0
 logy=0
 digital=0}
+B 2 20 -920 820 -520 {flags=graph
+y1=0
+y2=2
+ypos1=0.12609929
+ypos2=1.2636995
+divy=5
+subdivy=1
+unity=1
+x1=2.7139334e-07
+x2=2.837238e-07
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="out_parax%0
+out_parax%1
+out_parax%2
+out_parax%3
+out_parax%4"
+color="4 8 21 20 18"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=1}
+B 2 850 -920 1650 -520 {flags=graph,unlocked
+y1=1.1e-08
+y2=1.2
+ypos1=0.12609929
+ypos2=1.2636995
+divy=5
+subdivy=1
+unity=1
+x1=0
+x2=5e+08
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="out_parax%0
+out_parax%1
+out_parax%2
+out_parax%3
+out_parax%4"
+color="4 8 21 20 18"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=0
+sim_type=spectrum
+rawfile=$netlist_dir/vco_testbench_fft.raw}
+B 2 1680 -920 2480 -520 {flags=graph
+y1=0.00
+y2=0.0005
+ypos1=0.12609929
+ypos2=1.2636995
+divy=5
+subdivy=1
+unity=1
+x1=2.7139334e-07
+x2=2.837238e-07
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="\\"i(vmeas1) avg()%0\\"
+\\"i(vmeas1) avg()%1\\"
+\\"i(vmeas1) avg()%2\\"
+\\"i(vmeas1) avg()%3\\"
+\\"i(vmeas1) avg()%4\\""
+color="4 8 21 20 18"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=0}
 N 190 200 190 320 {
-lab=vss}
-N 170 200 170 300 {
 lab=vdd}
-N 60 320 190 320 {
+N 170 200 170 300 {
 lab=vss}
+N 60 320 190 320 {
+lab=vdd}
 N 60 300 170 300 {
+lab=vss}
+N 400 200 400 320 {
+lab=vdd}
+N 380 200 380 300 {
+lab=vss}
+N 270 320 400 320 {
+lab=vdd}
+N 270 300 380 300 {
+lab=vss}
+N 170 300 270 300 {
+lab=vss}
+N 190 320 270 320 {
 lab=vdd}
 C {devices/vsource.sym} -160 -80 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -160 -50 0 0 {name=l1 lab=GND}
@@ -103,6 +192,7 @@ only_toplevel=false
 value="
 .include sky130_fd_sc_hd__mux2_1.spice
 .include sky130_fd_sc_hd__mux4_1.spice
+.include sky130_fd_sc_hd__tapvpwrvgnd_1.spice
 
 .param Vc=0.0
 .param mc_mm_switch=1
@@ -120,7 +210,7 @@ value="
     write vco_testbench.raw
 
     linearize
-    fft v(out)
+    fft v(out) v(out_parax)
 
     write vco_testbench_fft.raw
     set appendwrite
@@ -144,6 +234,15 @@ C {devices/vsource.sym} -100 -80 0 0 {name=V3 value=0 savecurrent=false}
 C {devices/gnd.sym} -100 -50 0 0 {name=l2 lab=GND}
 C {devices/lab_wire.sym} -100 -110 0 0 {name=p8 lab=vss}
 C {devices/lab_wire.sym} 180 100 3 1 {name=p9 lab=vss}
-C {devices/lab_wire.sym} 60 320 0 0 {name=p16 lab=vss}
-C {devices/lab_wire.sym} 60 300 0 0 {name=p17 lab=vdd}
+C {devices/lab_wire.sym} 60 320 0 0 {name=p16 lab=vdd}
+C {devices/lab_wire.sym} 60 300 0 0 {name=p17 lab=vss}
 C {devices/ammeter.sym} 160 70 0 0 {name=Vmeas savecurrent=true spice_ignore=0}
+C {devices/lab_wire.sym} 360 200 3 0 {name=p6 lab=vcont}
+C {devices/lab_wire.sym} 370 40 3 1 {name=p7 lab=vdd}
+C {devices/lab_wire.sym} 460 150 0 1 {name=p10 lab=out_parax}
+C {vco.sym} 380 150 0 0 {name=x1
+schematic=vco_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/vco.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/vco.sim.spice]"}
+C {devices/lab_wire.sym} 390 100 3 1 {name=p11 lab=vss}
+C {devices/ammeter.sym} 370 70 0 0 {name=Vmeas1 savecurrent=true spice_ignore=0}

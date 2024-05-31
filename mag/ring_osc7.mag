@@ -1,0 +1,160 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1717104954
+<< viali >>
+rect -68 393 -34 895
+rect -68 -888 -34 -394
+<< metal1 >>
+rect -800 1150 3570 1260
+rect -110 895 -20 1150
+rect -110 880 -68 895
+rect -310 440 -250 880
+rect -190 480 -68 880
+rect -310 350 -190 440
+rect -110 393 -68 480
+rect -34 393 -20 895
+rect 160 580 170 650
+rect 330 580 340 650
+rect 670 580 680 650
+rect 840 580 850 650
+rect 1180 580 1190 650
+rect 1350 580 1360 650
+rect 1690 580 1700 650
+rect 1860 580 1870 650
+rect 2200 580 2210 650
+rect 2370 580 2380 650
+rect -110 380 -20 393
+rect -310 180 -250 350
+rect -340 80 -330 180
+rect -230 80 -220 180
+rect -800 -734 -680 -710
+rect -800 -795 -651 -734
+rect -590 -795 -584 -734
+rect -800 -820 -680 -795
+rect -310 -800 -250 80
+rect 3540 -150 3740 -130
+rect 0 -210 10 -150
+rect 70 -210 80 -150
+rect 3460 -210 3470 -150
+rect 3530 -210 3740 -150
+rect 3540 -240 3740 -210
+rect -90 -394 -20 -380
+rect -90 -420 -68 -394
+rect -190 -800 -68 -420
+rect -280 -930 -270 -840
+rect -180 -930 -170 -840
+rect -90 -888 -68 -800
+rect -34 -888 -20 -394
+rect 160 -800 170 -730
+rect 330 -800 340 -730
+rect 670 -800 680 -730
+rect 840 -800 850 -730
+rect 1180 -800 1190 -730
+rect 1350 -800 1360 -730
+rect 1690 -800 1700 -730
+rect 1860 -800 1870 -730
+rect 2200 -800 2210 -730
+rect 2370 -800 2380 -730
+rect -90 -1090 -20 -888
+rect -800 -1200 3570 -1090
+<< via1 >>
+rect 170 580 330 650
+rect 680 580 840 650
+rect 1190 580 1350 650
+rect 1700 580 1860 650
+rect 2210 580 2370 650
+rect 2720 580 2880 650
+rect 3230 580 3390 650
+rect -330 80 -230 180
+rect -651 -795 -590 -734
+rect 10 -210 70 -150
+rect 3470 -210 3530 -150
+rect -270 -930 -180 -840
+rect 170 -800 330 -730
+rect 680 -800 840 -730
+rect 1190 -800 1350 -730
+rect 1700 -800 1860 -730
+rect 2210 -800 2370 -730
+rect 2720 -800 2880 -730
+rect 3230 -800 3390 -730
+<< metal2 >>
+rect -330 650 3570 670
+rect -330 580 170 650
+rect 330 580 680 650
+rect 840 580 1190 650
+rect 1350 580 1700 650
+rect 1860 580 2210 650
+rect 2370 580 2720 650
+rect 2880 580 3230 650
+rect 3390 580 3570 650
+rect -330 560 3570 580
+rect -330 180 -230 560
+rect -330 70 -230 80
+rect 0 -150 3570 -130
+rect 0 -210 10 -150
+rect 70 -210 3470 -150
+rect 3530 -210 3570 -150
+rect 0 -240 3570 -210
+rect -651 -730 -590 -728
+rect 150 -730 3570 -710
+rect -651 -734 170 -730
+rect -590 -795 170 -734
+rect -651 -800 170 -795
+rect 330 -800 680 -730
+rect 840 -800 1190 -730
+rect 1350 -800 1700 -730
+rect 1860 -800 2210 -730
+rect 2370 -800 2720 -730
+rect 2880 -800 3230 -730
+rect 3390 -800 3570 -730
+rect -651 -801 -590 -800
+rect -270 -840 -180 -800
+rect 150 -820 3570 -800
+rect -270 -940 -180 -930
+use delay_stage  delay_stage_0 ~/Development/spo/vlsi/tt07-spo-pll/mag
+timestamp 1717029282
+transform 1 0 -90 0 1 1470
+box 1110 -2670 1620 -210
+use delay_stage  delay_stage_1
+timestamp 1717029282
+transform 1 0 1950 0 1 1470
+box 1110 -2670 1620 -210
+use delay_stage  delay_stage_2
+timestamp 1717029282
+transform 1 0 420 0 1 1470
+box 1110 -2670 1620 -210
+use delay_stage  delay_stage_3
+timestamp 1717029282
+transform 1 0 1440 0 1 1470
+box 1110 -2670 1620 -210
+use delay_stage  x1
+timestamp 1717029282
+transform 1 0 -1110 0 1 1470
+box 1110 -2670 1620 -210
+use delay_stage  x2
+timestamp 1717029282
+transform 1 0 -600 0 1 1470
+box 1110 -2670 1620 -210
+use delay_stage  x3
+timestamp 1717029282
+transform 1 0 930 0 1 1470
+box 1110 -2670 1620 -210
+use sky130_fd_pr__pfet_01v8_PLD8WZ  XM5
+timestamp 1717055118
+transform 1 0 -224 0 1 644
+box -226 -384 226 384
+use sky130_fd_pr__nfet_01v8_lvt_TKZJHP  XM6
+timestamp 1717055118
+transform 1 0 -224 0 1 -641
+box -226 -379 226 379
+<< labels >>
+flabel metal1 -800 -820 -680 -710 0 FreeSans 256 0 0 0 vcont
+port 2 nsew
+flabel metal1 -800 -1200 -600 -1090 0 FreeSans 256 0 0 0 vss
+port 1 nsew
+flabel metal1 -800 1150 -600 1260 0 FreeSans 256 0 0 0 vdd
+port 0 nsew
+flabel metal1 3540 -240 3740 -130 0 FreeSans 256 0 0 0 out
+port 3 nsew
+<< end >>

@@ -1,0 +1,31 @@
+* testing extracted vco
+
+V1 vdd GND {VDD}
+V2 vss GND 0
+
+* frequency control voltage (higher voltage = higher frequency)
+V3 vcont GND {VCONT}
+
+*.subckt ring_osc7_parax out vcont vss vdd
+x1 out vcont vss net_measured_vdd ring_osc7_parax
+
+* measure current consumed by vco
+Vmeas vdd net_measured_vdd 0
+.save i(vmeas)
+
+.include prefix.spice
+.include ../../../mag/ring_osc7.sim.spice
+
+*.option savecurrents
+.control
+  save all
+  tran 10p 500n 100n
+  wrdata out/ring_osc7_current.txt vmeas#branch
+  linearize
+  fft v(out)
+  wrdata out/ring_osc7_fft.txt mag(V(out))
+  quit
+.endc
+
+.global GND
+.end

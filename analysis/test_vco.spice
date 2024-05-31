@@ -10,8 +10,8 @@ V3 vcont GND {VCONT}
 V4 s0 GND {S0}
 V5 s1 GND {S1}
 
-*.subckt vco_parax s0 s1 out vcont vss vdd
-x1 s0 s1 out vcont vss net_measured_vdd vco_parax
+*.subckt vco_parax s0 s1 out vdd vcont vss
+x1 s0 s1 out net_measured_vdd vcont vss vco_parax
 
 * measure current consumed by vco
 Vmeas vdd net_measured_vdd 0
