@@ -67,7 +67,7 @@ C {sky130_stdcells/nor2_1.sym} 120 -220 0 1 {name=x1 VGND=VSS VNB=VSS VPB=VDD VP
 C {sky130_stdcells/nor2_1.sym} 120 -60 0 1 {name=x2 VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {devices/ipin.sym} 220 -40 0 1 {name=p3 lab=RESET}
 C {sky130_stdcells/nor2_1.sym} 120 -500 0 0 {name=x3 VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/nor2_1.sym} 120 -340 0 0 {name=x4 VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/nor2_4.sym} 120 -340 0 0 {name=x4 VGND=VSS VNB=VSS VPB=VDD VPWR=VDD prefix=sky130_fd_sc_hd__ }
 C {devices/ipin.sym} 20 -520 0 0 {name=p4 lab=CK}
 C {devices/opin.sym} 220 -340 0 0 {name=p5 lab=Q}
 C {devices/ipin.sym} -160 -500 0 0 { name=p1 lab=VDD }
