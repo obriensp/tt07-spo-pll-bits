@@ -1,7 +1,7 @@
 magic
 tech sky130A
 magscale 1 2
-timestamp 1717192467
+timestamp 1717194565
 << viali >>
 rect 2136 1731 2170 1969
 rect 2771 1862 2805 1896
@@ -387,55 +387,55 @@ rect -520 -1195 -515 -1095
 rect -415 -1195 -410 -1095
 rect -520 -1200 -410 -1195
 use delay_stage  delay_stage_0 ~/Development/spo/vlsi/tt07-spo-pll/mag
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 -90 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  delay_stage_1
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 2970 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  delay_stage_2
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 1440 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  delay_stage_3
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 2460 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  delay_stage_4
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 930 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  delay_stage_5
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 420 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  delay_stage_6
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 1950 0 1 1470
 box 1110 -2670 1620 -210
 use sky130_fd_sc_hd__mux4_1  sky130_fd_sc_hd__mux4_1_0
-timestamp 1704896540
+timestamp 1717194565
 transform -1 0 4040 0 -1 2122
 box -38 -48 1970 592
 use sky130_fd_sc_hd__tapvpwrvgnd_1  sky130_fd_sc_hd__tapvpwrvgnd_1_0
-timestamp 1704896540
+timestamp 1717194565
 transform -1 0 4132 0 -1 2122
 box -38 -48 130 592
 use delay_stage  x1
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 -1110 0 1 1470
 box 1110 -2670 1620 -210
 use delay_stage  x2
-timestamp 1717029282
+timestamp 1717194565
 transform 1 0 -600 0 1 1470
 box 1110 -2670 1620 -210
 use sky130_fd_pr__pfet_01v8_PLD8WZ  XM5
-timestamp 1717055118
+timestamp 1717194565
 transform 1 0 -224 0 1 644
 box -226 -384 226 384
 use sky130_fd_pr__nfet_01v8_lvt_TKZJHP  XM6
-timestamp 1717055118
+timestamp 1717194565
 transform 1 0 -224 0 1 -641
 box -226 -379 226 379
 << labels >>
