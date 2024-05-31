@@ -1,0 +1,14 @@
+magic
+tech sky130A
+magscale 1 2
+timestamp 1717183566
+<< locali >>
+rect -100 820 100 877
+rect -100 -877 100 -820
+<< rlocali >>
+rect -100 -820 100 820
+<< properties >>
+string gencell sky130_fd_pr__res_generic_l1
+string library sky130
+string parameters w 1.0 l 8.2 m 1 nx 1 wmin 0.17 lmin 0.17 rho 12.8 val 104.96 dummy 0 dw 0.0 term 0.0 snake 0 roverlap 0
+<< end >>

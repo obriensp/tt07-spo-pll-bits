@@ -6,25 +6,27 @@ V {}
 S {}
 E {}
 B 2 30 -760 830 -360 {flags=graph
-y1=0
+y1=-1.8e-07
 y2=2
 ypos1=0.12609929
 ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=1.01334e-07
-x2=1.0218923e-07
+x1=0
+x2=2e-07
 divx=5
 subdivx=1
 xlabmag=1.0
 ylabmag=1.0
-node="out%0
+node="vpulse
+out%0
 out%1
 out%2
 out%3
-out%4"
-color="4 8 21 20 18"
+out%4
+\\"-; 0.9\\""
+color="4 8 21 20 18 6 9"
 dataset=-1
 unitx=1
 logx=0
@@ -38,8 +40,8 @@ ypos2=1.2636995
 divy=5
 subdivy=1
 unity=1
-x1=1.01334e-07
-x2=1.0218923e-07
+x1=0
+x2=2e-07
 divx=5
 subdivx=1
 xlabmag=1.0

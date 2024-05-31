@@ -113,7 +113,6 @@ sa=0 sb=0 sd=0
 model=pfet_01v8
 spiceprefix=X
 }
-C {devices/gnd.sym} 600 -190 0 0 {name=l4 lab=GND}
 C {sky130_fd_pr/nfet_01v8.sym} 90 -340 0 0 {name=M3
 L=0.15
 W=1
@@ -154,7 +153,6 @@ W=1
 L=10
 model=res_generic_l1
 mult=1}
-C {devices/gnd.sym} 750 -260 0 0 {name=l5 lab=GND}
 C {sky130_fd_pr/cap_mim_m3_1.sym} 750 -290 0 0 {name=C1 model=cap_mim_m3_1 W=10 L=10 MF=1 spiceprefix=X}
 C {devices/lab_wire.sym} 260 -550 0 0 {name=p28 lab=vdd}
 C {devices/lab_wire.sym} 380 -550 0 1 {name=p29 lab=vdd}
@@ -242,3 +240,5 @@ C {devices/opin.sym} 820 -320 0 0 {name=p15 lab=VOUT}
 C {devices/lab_wire.sym} -90 -390 0 1 {name=p6 sig_type=std_logic lab=QA}
 C {devices/ipin.sym} -90 -330 0 0 {name=p7 lab=QB}
 C {devices/lab_wire.sym} -90 -330 0 1 {name=p8 sig_type=std_logic lab=QB}
+C {devices/lab_wire.sym} 600 -190 2 1 {name=p9 lab=vss}
+C {devices/lab_wire.sym} 750 -260 2 1 {name=p10 lab=vss}

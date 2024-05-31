@@ -34,27 +34,31 @@ lab=QA}
 N 350 -110 410 -110 {
 lab=QB}
 N 280 -490 300 -490 {
-lab=vdd}
+lab=VPWR}
 N 280 -460 300 -460 {
-lab=vss}
-C {latch2.sym} 270 -290 0 0 {name=x1 VDDPIN=vdd VSSPIN=vss}
-C {latch2.sym} 270 -110 2 1 {name=x3 VDDPIN=vdd VSSPIN=vss}
-C {sky130_stdcells/and2_1.sym} 250 -190 0 1 {name=x4 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {devices/lab_wire.sym} 240 -340 3 1 {name=p9 lab=vdd}
-C {devices/lab_wire.sym} 260 -340 3 1 {name=p10 lab=vss}
-C {devices/lab_wire.sym} 240 -60 3 0 {name=p14 lab=vdd}
-C {devices/lab_wire.sym} 260 -60 3 0 {name=p16 lab=vss}
+lab=VGND}
+C {latch2.sym} 270 -290 0 0 {name=x1}
+C {latch2.sym} 270 -110 2 1 {name=x3}
+C {sky130_stdcells/and2_1.sym} 250 -190 0 1 {name=x4 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {devices/lab_wire.sym} 240 -340 3 1 {name=p9 lab=VPWR}
+C {devices/lab_wire.sym} 260 -340 3 1 {name=p10 lab=VGND}
+C {devices/lab_wire.sym} 240 -60 3 0 {name=p14 lab=VPWR}
+C {devices/lab_wire.sym} 260 -60 3 0 {name=p16 lab=VGND}
 C {devices/lab_wire.sym} 150 -190 0 0 {name=p27 lab=reset}
-C {devices/iopin.sym} 280 -490 0 1 {name=p1 lab=vdd}
-C {devices/lab_wire.sym} 300 -490 0 1 {name=p2 lab=vdd}
+C {devices/iopin.sym} 280 -490 0 1 {name=p1 lab=VPWR}
+C {devices/lab_wire.sym} 300 -490 0 1 {name=p2 lab=VPWR}
 C {devices/ipin.sym} 60 -310 0 0 {name=p17 lab=REF}
-C {devices/iopin.sym} 280 -460 0 1 {name=p28 lab=vss}
-C {devices/lab_wire.sym} 300 -460 0 1 {name=p29 lab=vss}
+C {devices/iopin.sym} 280 -460 0 1 {name=p28 lab=VGND}
+C {devices/lab_wire.sym} 300 -460 0 1 {name=p29 lab=VGND}
 C {devices/opin.sym} 410 -290 0 0 {name=p15 lab=QA}
 C {devices/opin.sym} 410 -110 0 0 {name=p3 lab=QB}
 C {devices/ipin.sym} 70 -90 0 0 {name=p4 lab=CLK}
-C {sky130_stdcells/decap_12.sym} 700 -420 0 0 {name=x2 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/decap_3.sym} 700 -360 0 0 {name=x5 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/decap_4.sym} 700 -310 0 0 {name=x6 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/decap_6.sym} 700 -260 0 0 {name=x7 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
-C {sky130_stdcells/decap_8.sym} 700 -210 0 0 {name=x8 VGND=vss VNB=vss VPB=vdd VPWR=vdd prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_12.sym} 700 -420 0 0 {name=x2 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_3.sym} 700 -360 0 0 {name=x5 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_4.sym} 700 -310 0 0 {name=x6 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_6.sym} 700 -260 0 0 {name=x7 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_8.sym} 700 -210 0 0 {name=x8 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_3.sym} 850 -360 0 0 {name=x9 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_3.sym} 1000 -360 0 0 {name=x10 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_3.sym} 1160 -360 0 0 {name=x11 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
+C {sky130_stdcells/decap_3.sym} 1310 -360 0 0 {name=x12 VGND=vgnd VNB=vgnd VPB=vpwr VPWR=vpwr prefix=sky130_fd_sc_hd__ }
