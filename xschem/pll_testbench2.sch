@@ -13,7 +13,7 @@ ypos2=0.93134934
 divy=5
 subdivy=1
 unity=1
-x1=2.000235e-07
+x1=2.0001877e-07
 x2=5e-06
 divx=5
 subdivx=1
@@ -53,30 +53,7 @@ logy=0
 digital=0
 sim_type=sp
 rawfile=$netlist_dir/pll_testbench_fft2.raw}
-B 2 40 -950 840 -550 {flags=graph
-y1=0
-y2=2
-ypos1=0.077321479
-ypos2=0.86383544
-divy=5
-subdivy=1
-unity=1
-x1=2.000235e-07
-x2=5e-06
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node="qa
-qb
-reset"
-color="20 18 6"
-dataset=-1
-unitx=1
-logx=0
-logy=0
-digital=1}
-B 2 40 -1380 840 -980 {flags=graph
+B 2 40 -940 840 -540 {flags=graph
 y1=0
 y2=2
 ypos1=0.011109428
@@ -84,7 +61,7 @@ ypos2=0.9284606
 divy=5
 subdivy=1
 unity=1
-x1=2.000235e-07
+x1=2.0001877e-07
 x2=5e-06
 divx=5
 subdivx=1
@@ -97,10 +74,6 @@ unitx=1
 logx=0
 logy=0
 digital=0}
-N 600 420 680 420 {
-lab=vcont}
-N 680 290 680 420 {
-lab=vcont}
 C {devices/vsource.sym} -120 -110 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -120 -80 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -120 -140 0 0 {name=p1 lab=vdd}
@@ -154,11 +127,14 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 "
 }
 C {devices/lab_wire.sym} 780 240 1 0 {name=p7 lab=vco_out}
-C {devices/lab_wire.sym} 350 360 3 1 {name=p9 lab=vdd}
-C {devices/lab_wire.sym} 370 360 3 1 {name=p10 lab=vss}
-C {devices/lab_wire.sym} 280 410 0 0 {name=p13 lab=ref}
-C {devices/lab_wire.sym} 280 430 0 0 {name=p19 lab=clk}
-C {clock_phases.sym} 890 240 0 0 {name=x5}
+C {devices/lab_wire.sym} 370 180 3 1 {name=p9 lab=vdd}
+C {devices/lab_wire.sym} 390 180 3 1 {name=p10 lab=vss}
+C {devices/lab_wire.sym} 300 230 0 0 {name=p13 lab=ref}
+C {devices/lab_wire.sym} 300 250 0 0 {name=p19 lab=clk}
+C {clock_phases.sym} 890 240 0 0 {name=x5
+schematic=clock_phases_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/clock_phases.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/clock_phases.sim.spice]"}
 C {devices/lab_wire.sym} 870 180 1 0 {name=p12 lab=vdd}
 C {devices/lab_wire.sym} 910 180 1 0 {name=p25 lab=vss}
 C {clkdiv2.sym} 1070 240 0 0 {name=x6}
@@ -168,16 +144,14 @@ C {clkdiv2.sym} 1220 240 0 0 {name=x7}
 C {devices/lab_wire.sym} 1210 180 1 0 {name=p34 lab=vdd}
 C {devices/lab_wire.sym} 1230 180 1 0 {name=p35 lab=vss}
 C {devices/lab_wire.sym} 1290 230 1 0 {name=p36 lab=clk}
-C {charge_pump.sym} 520 420 0 0 {name=x8
+C {charge_pump.sym} 540 240 0 0 {name=x8
 schematic=charge_pump_parax.sim
 spice_sym_def="tcleval(.include [file normalize ../mag/charge_pump.sim.spice])"
 tclcommand="textwindow [file normalize ../mag/charge_pump.sim.spice]"}
-C {devices/lab_wire.sym} 440 410 0 0 {name=p37 sig_type=std_logic lab=QA}
-C {devices/lab_wire.sym} 440 430 0 0 {name=p38 sig_type=std_logic lab=QB}
-C {devices/lab_wire.sym} 600 420 0 1 {name=p39 lab=vcont}
-C {devices/lab_wire.sym} 510 370 3 1 {name=p40 lab=vdd}
-C {devices/lab_wire.sym} 530 370 3 1 {name=p41 lab=vss}
-C {pfd.sym} 360 420 0 0 {name=x9
+C {devices/lab_wire.sym} 620 240 1 0 {name=p39 lab=vcont}
+C {devices/lab_wire.sym} 530 190 3 1 {name=p40 lab=vdd}
+C {devices/lab_wire.sym} 550 190 3 1 {name=p41 lab=vss}
+C {pfd.sym} 380 240 0 0 {name=x9
 schematic=pfd_parax.sim
 spice_sym_def="tcleval(.include [file normalize ../mag/pfd.sim.spice])"
 tclcommand="textwindow [file normalize ../mag/pfd.sim.spice]"}

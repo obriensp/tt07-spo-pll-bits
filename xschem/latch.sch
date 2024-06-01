@@ -91,8 +91,8 @@ C {devices/lab_wire.sym} 80 -150 0 1 {name=p10 lab=vss}
 C {devices/lab_wire.sym} 200 -150 0 0 {name=p11 lab=vss}
 C {sky130_fd_pr/nfet_01v8.sym} 120 -60 0 0 {name=M4
 L=0.15
-W=1
-nf=2 
+W=2
+nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -105,8 +105,8 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 60 -150 0 0 {name=M1
 L=0.15
-W=1
-nf=2 
+W=2
+nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
@@ -119,8 +119,8 @@ spiceprefix=X
 }
 C {sky130_fd_pr/nfet_01v8.sym} 220 -150 0 1 {name=M2
 L=0.15
-W=1
-nf=2 
+W=2
+nf=1 
 mult=1
 ad="'int((nf+1)/2) * W/nf * 0.29'" 
 pd="'2*int((nf+1)/2) * (W/nf + 0.29)'"
