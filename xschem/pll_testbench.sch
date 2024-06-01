@@ -85,6 +85,34 @@ unitx=1
 logx=0
 logy=0
 digital=1}
+B 2 880 -930 1680 -530 {flags=graph,unlocked
+y1=0
+y2=2
+ypos1=0.0031692536
+ypos2=1.5507312
+divy=5
+subdivy=1
+unity=1
+x1=-5314489.8
+x2=2.6041e+08
+divx=5
+subdivx=1
+xlabmag=1.0
+ylabmag=1.0
+node="clk
+d0_parax
+d1_parax
+d2_parax
+d3_parax
+d4_parax"
+color="4 8 21 20 18 6"
+dataset=-1
+unitx=1
+logx=0
+logy=0
+digital=0
+sim_type=sp
+rawfile=$netlist_dir/pll_testbench_fft.raw}
 C {devices/vsource.sym} -120 -110 0 0 {name=V1 value=1.8 savecurrent=false}
 C {devices/gnd.sym} -120 -80 0 0 {name=l1 lab=GND}
 C {devices/lab_wire.sym} -120 -140 0 0 {name=p1 lab=vdd}
@@ -98,7 +126,7 @@ value="
   write pll_testbench.raw
 
   linearize
-  fft v(clk) v(d0) v(d1) v(d2) v(d3) v(d4)
+  fft v(clk) v(d0) v(d1) v(d2) v(d3) v(d4) v(d0_parax) v(d1_parax) v(d2_parax) v(d3_parax) v(d4_parax)
   write pll_testbench_fft.raw
   quit 0
 .endc
@@ -152,19 +180,34 @@ xschem raw_read $netlist_dir/[file tail [file rootname [xschem get current_name]
 C {devices/lab_wire.sym} 380 120 1 0 {name=p7 lab=clk}
 C {devices/lab_wire.sym} 470 210 1 0 {name=p9 lab=vdd}
 C {devices/lab_wire.sym} 510 210 1 0 {name=p10 lab=vss}
-C {clkdiv2.sym} 670 270 0 0 {name=x10}
+C {clkdiv2.sym} 670 270 0 0 {name=x10
+schematic=clkdiv2_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/clkdiv2.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/clkdiv2.sim.spice]"}
 C {devices/lab_wire.sym} 660 210 1 0 {name=p11 lab=vdd}
 C {devices/lab_wire.sym} 680 210 1 0 {name=p14 lab=vss}
-C {clkdiv2.sym} 820 270 0 0 {name=x11}
+C {clkdiv2.sym} 820 270 0 0 {name=x11
+schematic=clkdiv2_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/clkdiv2.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/clkdiv2.sim.spice]"}
 C {devices/lab_wire.sym} 810 210 1 0 {name=p16 lab=vdd}
 C {devices/lab_wire.sym} 830 210 1 0 {name=p17 lab=vss}
-C {clkdiv2.sym} 970 270 0 0 {name=x12}
+C {clkdiv2.sym} 970 270 0 0 {name=x12
+schematic=clkdiv2_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/clkdiv2.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/clkdiv2.sim.spice]"}
 C {devices/lab_wire.sym} 960 210 1 0 {name=p18 lab=vdd}
 C {devices/lab_wire.sym} 980 210 1 0 {name=p19 lab=vss}
-C {clkdiv2.sym} 1120 270 0 0 {name=x13}
+C {clkdiv2.sym} 1120 270 0 0 {name=x13
+schematic=clkdiv2_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/clkdiv2.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/clkdiv2.sim.spice]"}
 C {devices/lab_wire.sym} 1110 210 1 0 {name=p20 lab=vdd}
 C {devices/lab_wire.sym} 1130 210 1 0 {name=p21 lab=vss}
-C {clkdiv2.sym} 1270 270 0 0 {name=x14}
+C {clkdiv2.sym} 1270 270 0 0 {name=x14
+schematic=clkdiv2_parax.sim
+spice_sym_def="tcleval(.include [file normalize ../mag/clkdiv2.sim.spice])"
+tclcommand="textwindow [file normalize ../mag/clkdiv2.sim.spice]"}
 C {devices/lab_wire.sym} 1260 210 1 0 {name=p22 lab=vdd}
 C {devices/lab_wire.sym} 1280 210 1 0 {name=p23 lab=vss}
 C {devices/lab_wire.sym} 740 260 1 0 {name=p24 lab=d0_parax}

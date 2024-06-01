@@ -30,15 +30,11 @@ lab=out}
 N 440 -150 480 -150 {
 lab=out_n}
 C {latch.sym} 160 -170 0 0 {name=x2
-schematic=latch_parax.sim
-spice_sym_def="tcleval(.include [file normalize ../mag/latch.sim.spice])"
-tclcommand="textwindow [file normalize ../mag/latch.sim.spice]"}
+}
 C {devices/lab_wire.sym} 150 -230 1 0 {name=p14 lab=vdd}
 C {devices/lab_wire.sym} 170 -230 1 0 {name=p15 lab=vss}
 C {latch.sym} 320 -170 0 0 {name=x3
-schematic=latch_parax.sim
-spice_sym_def="tcleval(.include [file normalize ../mag/latch.sim.spice])"
-tclcommand="textwindow [file normalize ../mag/latch.sim.spice]"}
+}
 C {devices/lab_wire.sym} 310 -230 1 0 {name=p16 lab=vdd}
 C {devices/lab_wire.sym} 330 -230 1 0 {name=p17 lab=vss}
 C {devices/iopin.sym} 250 -390 0 1 {name=p1 lab=vdd}
